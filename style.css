@@ -651,6 +651,26 @@ main {
   main {
     padding: 30px 15px;
   }
+  .benefits-list {
+    padding: 0; 
+    margin: 0;
+    list-style: none; /* Прибираємо маркери, щоб звільнити місце */
+    width: 100%;
+  }
+
+  .benefits-list li {
+    font-size: 16px;      /* Зменшуємо шрифт, щоб довгі рядки (адреса) влізли */
+    line-height: 1.5;     /* Додаємо простору між рядками */
+    word-wrap: break-word; /* Дозволяє переносити текст, якщо він все одно задовгий */
+    margin-bottom: 12px;
+    text-align: left;     /* Або center, якщо хочете симетрії */
+  }
+
+  .benefits-content {
+    padding: 0 10px;      /* Додаємо невеликі відступи від країв екрана */
+    width: 100%;
+  }
+}
 
   footer {
     height: 280px;
@@ -662,4 +682,5 @@ main {
     text-align: center;
   }
 }
+
 
