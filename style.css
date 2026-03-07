@@ -539,34 +539,26 @@ main {
 
 @media (max-width: 600px) {
   /* 1. Глобальні налаштування */
-  body,
-  html {
+  body, html {
     overflow-x: hidden;
     position: relative;
     width: 100%;
   }
 
-  /* 2. Шапка та заголовок на головній (index.html) */
+  /* 2. Текст та заголовки */
   h1 {
-    font-size: 28px !important; /* Щоб текст не обрізався */
+    font-size: 28px !important;
     margin-top: 20px;
     text-align: center;
   }
 
-  .header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 0;
+  .container h1 {
+    font-size: 24px !important;
+    margin-top: 90px !important;
+    line-height: 1.2;
   }
 
-  .header-top img {
-    height: 45px !important; /* Маленьке лого для головної */
-    width: auto;
-  }
-
-  /* 3. Кнопка "Швидке замовлення" - ЗАВЖДИ В ОДИН РЯД */
+  /* 3. Кнопка "Швидке замовлення" та Бургер */
   .open-order-btn-header {
     white-space: nowrap !important;
     font-size: 10px !important;
@@ -585,102 +577,63 @@ main {
     flex-shrink: 0;
   }
 
-  /* 4. Сторінка послуги (laser.html) - Логотип та заголовок */
-  .laser-logo {
-    width: 70px !important;
-    top: 10px;
-    left: 10px;
-    position: fixed;
-  }
-
-  .menu-button-close {
-    top: 10px;
-    right: 10px;
-    width: 35px;
-    height: 35px;
-    background-size: 20px;
-    position: fixed;
-  }
-
-  .container h1 {
-    font-size: 24px !important;
-    margin-top: 90px !important; /* Опускаємо текст нижче логотипа */
-    line-height: 1.2;
-  }
-
-  /* 5. Карусель (Прибираємо полоску збоку) */
-  .carousel-3d-container {
-    height: 280px;
-    perspective: 800px;
-    margin: 10px auto;
+  /* 4. Списки (Контакти/Переваги) - ВИПРАВЛЕННЯ ОБРІЗАННЯ */
+  .benefits {
+    display: block !important; /* Міняємо grid на block, щоб текст не стискався в колонки */
     width: 100%;
   }
 
-  .carousel-3d-track {
-    width: 180px; /* Ще трохи менше для гарантії */
-    height: 180px;
-  }
-
-  .slide.next {
-    transform: translate3d(50px, 0, -100px) rotateY(-25deg) !important;
-  }
-
-  .slide.prev {
-    transform: translate3d(-50px, 0, -100px) rotateY(25deg) !important;
-  }
-
-  /* 6. Картки товарів (index.html) */
-  .products {
-    grid-template-columns: 1fr !important;
-    gap: 30px;
-    padding: 0;
-  }
-
-  .product-photo {
-    max-width: 280px;
-    margin: 0 auto 15px auto;
-  }
-
-  .product-title,
-  .product-description,
-  .product-price {
-    text-align: center;
-  }
-
-  /* 7. Інші елементи */
-  main {
-    padding: 30px 15px;
-  }
   .benefits-list {
-    padding: 0; 
-    margin: 0;
-    list-style: none; /* Прибираємо маркери, щоб звільнити місце */
+    padding: 0 !important; 
+    margin: 20px 0 !important;
+    list-style: none;
     width: 100%;
   }
 
   .benefits-list li {
-    font-size: 16px;      /* Зменшуємо шрифт, щоб довгі рядки (адреса) влізли */
-    line-height: 1.5;     /* Додаємо простору між рядками */
-    word-wrap: break-word; /* Дозволяє переносити текст, якщо він все одно задовгий */
+    font-size: 15px !important; /* Трохи менший шрифт для гарантії */
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     margin-bottom: 12px;
-    text-align: left;     /* Або center, якщо хочете симетрії */
+    text-align: left;
+    white-space: normal; /* Дозволяємо перенос тексту */
   }
 
   .benefits-content {
-    padding: 0 10px;      /* Додаємо невеликі відступи від країв екрана */
+    padding: 0 5px; /* Мінімальний відступ */
     width: 100%;
   }
-}
 
-  footer {
+  /* 5. Карусель та Продукти */
+  .carousel-3d-container {
     height: 280px;
+    width: 100%;
+  }
+
+  .carousel-3d-track {
+    width: 180px;
+    height: 180px;
+  }
+
+  .products {
+    grid-template-columns: 1fr !important;
+    gap: 30px;
+  }
+
+  /* 6. Футер та Опис (Тепер вони працюватимуть) */
+  footer {
+    height: 280px !important;
+    position: relative; /* Щоб не перекривав контент на мобілці */
   }
 
   .service-description {
     font-size: 14px;
     padding: 0 10px;
     text-align: center;
+    line-height: 1.5;
   }
-}
+} /* КІНЕЦЬ МЕДІА-ЗАПИТУ */
+
 
 
