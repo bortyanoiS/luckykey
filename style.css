@@ -1,0 +1,664 @@
+/* 1. БАЗОВІ НАЛАШТУВАННЯ ДЛЯ ВСІХ ПРИСТРОЇВ */
+* {
+  box-sizing: border-box; /* Щоб падінги не розтягували блоки */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  background-color: #121212;
+  color: #e8eff9;
+  font-size: 16px;
+  line-height: 140%;
+  overflow-x: hidden; /* Запобігає горизонтальній прокрутці */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 2. ТИПОГРАФІКА */
+h1 {
+  margin: 0;
+  margin-top: 40px;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: -1.5px;
+  color: #e8eff9;
+}
+
+/* 3. МЕНЮ (Мобільне на основі :target) */
+.menu {
+  position: fixed; /* Змінено на fixed для надійності */
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  transform: translateX(-100%);
+  transition: transform 500ms;
+  background-color: #121212;
+  padding: 40px 80px;
+  height: 100vh;
+}
+
+.menu:target {
+  transform: translateX(0%);
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+/* 4. ШАПКА ТА ХЕДЕР */
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 80px;
+  height: 100vh;
+  background-image:
+    linear-gradient(to bottom, rgba(18, 18, 18, 0) 70%, #121212 100%),
+    url(images/header.png);
+  background-size: cover;
+  background-position: top center;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap; /* Забороняє їм ставати один під одним */
+  max-width: 100%;
+}
+
+.open-order-btn-header {
+  height: 40px; /* Фіксована висота */
+  display: flex; /* Щоб текст всередині теж був по центру */
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px; /* Відступи тільки з боків */
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 8px; /* Або 20px, якщо хочеш округлу */
+  background-color: #e8eff9;
+  color: #121212;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.open-order-btn-header:hover {
+  background-color: #fff;
+  transform: scale(1.05);
+}
+
+/* На дуже маленьких екранах зменшуємо кнопку ще трохи */
+@media (max-width: 480px) {
+  .open-order-btn-header {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+  .header-actions {
+    gap: 10px;
+  }
+}
+
+.header-top,
+.body-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-top img,
+.body-top img {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+}
+
+.menu-button,
+.menu-button-close {
+  height: 40px; /* Така ж висота, як у кнопки */
+  width: 40px; /* Робимо її квадратною */
+  display: block;
+  background-image: url(images/icon-burger-menu.png);
+  background-size: 40px; /* Розмір самої іконки всередині квадрата */
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+}
+
+.menu-button {
+  background-image: url(images/icon-burger-menu.png);
+}
+.menu-button:hover {
+  background-image: url(images/icon-burger-menu-hover.png);
+}
+.menu-button-close {
+  background-image: url(images/icon-close.png);
+  margin-top: 15px;
+}
+
+/* 5. ОСНОВНИЙ КОНТЕНТ */
+main {
+  padding: 120px 80px;
+  background-color: #121212;
+  -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}
+
+.recomended-title,
+.categories-title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: -1.5px;
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.product-photo {
+  width: 100%;
+  margin-bottom: 32px;
+}
+.product-title {
+  margin-top: 32px;
+  font-weight: 700;
+}
+.product-description {
+  margin-top: 8px;
+}
+.product-price {
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+/* 6. КАТЕГОРІЇ ТА ПЕРЕВАГИ */
+.category {
+  margin-top: 64px;
+}
+.photos {
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+}
+.photo-wide {
+  width: 66%;
+}
+.photo-square {
+  width: 32%;
+}
+.category-title {
+  margin-top: 16px;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 120px;
+}
+
+.benefits-title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 48px;
+  margin: 0;
+}
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  font-weight: 700;
+}
+.benefits-description {
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 400;
+}
+
+/* Стиль кнопки, яка відкриває форму */
+.open-order-btn {
+  display: inline-block;
+  padding: 18px 40px;
+  background-color: #e8eff9;
+  color: #121212;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(232, 239, 249, 0.2);
+}
+
+.open-order-btn:hover {
+  transform: translateY(-3px);
+  background-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(232, 239, 249, 0.4);
+}
+
+/* ФОН МОДАЛЬНОГО ВІКНА (затемнення) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9); /* Темний фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000; /* Поверх усього */
+
+  /* Початковий стан (приховано) */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+/* МАГІЯ ПОКАЗУ: коли в URL з'являється #order-popup */
+.modal-overlay:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* КВАДРАТИК З ФОРМОЮ */
+.modal-content {
+  background: #1e1e1e;
+  padding: 40px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 20px;
+  position: relative;
+  border: 1px solid #333;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+/* Кнопка-хрестик */
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 35px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+}
+
+/* Елементи форми всередині вікна */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #e8eff9;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  background: #121212;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  background: #e8eff9;
+  color: #121212;
+  border: none;
+  border-radius: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* 7. ФУТЕР */
+footer {
+  position: sticky;
+  bottom: 0;
+  z-index: -1;
+  height: 460px;
+  background-image:
+    linear-gradient(to top, rgba(18, 18, 18, 0) 70%, #121212 100%),
+    url(images/footer.png);
+  background-size: cover;
+  background-position: top center;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+/* ПЛАНШЕТИ (до 1024px) */
+@media (max-width: 1024px) {
+  header,
+  .menu,
+  main {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .products {
+    grid-template-columns: 1fr 1fr;
+  }
+  main {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+/* Контейнер, де лежить логотип і кнопка в меню */
+.body-top {
+  display: flex;
+  justify-content: space-between; /* Розносить лого вліво, кнопку вправо */
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.laser-logo {
+  position: fixed;
+  top: 15px; /* Відступ від верху */
+  left: 15px; /* Відступ від лівого краю */
+  width: 120px; /* Тут регулюйте ширину логотипа (зробив меншим) */
+  height: auto; /* Пропорції збережуться автоматично */
+  z-index: 1000;
+}
+
+.menu-button-close {
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: fixed;
+  top: 15px; /* Той самий відступ, що й у логотипа для симетрії */
+  right: 15px; /* ПРИТИСКАЄМО ДО ПРАВОГО КРАЮ */
+  z-index: 1000;
+
+  background-image: url(images/icon-close.png);
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  border: none;
+}
+
+.menu-button-close:hover {
+  opacity: 0.7;
+}
+
+.header-bottom {
+  padding-bottom: 0px !important;
+}
+
+.service-page {
+  margin-top: -20px;
+}
+.container {
+  text-align: center; /* Центрує текст h1 та кнопку */
+  padding: 0 20px; /* Відступи, щоб текст не лип до країв на телефонах */
+}
+
+/* Налаштування для заголовка */
+.container h1 {
+  margin-top: 30px; /* Відступ від каруселі */
+  margin-bottom: 15px;
+  display: block; /* Гарантуємо, що це блочний елемент */
+}
+
+/* Налаштування для опису */
+.service-description {
+  max-width: 600px; /* Обмежуємо ширину, щоб текст було зручно читати */
+  margin-left: auto; /* Авто-відступ зліва */
+  margin-right: auto; /* Авто-відступ справа */
+  margin-bottom: 30px; /* Відступ до кнопки */
+}
+.carousel-3d-container {
+  perspective: 1000px; /* Створює глибину сцени */
+  width: 100%;
+  max-width: 600px;
+  height: 600px;
+  margin: 10px auto 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-3d-track {
+  position: relative;
+  width: 450px; /* Ширина головного фото */
+  height: 450px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  transition: all 0.6s ease-in-out;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Головне фото по центру */
+.slide.active {
+  transform: translate3d(0, 0, 100px);
+  z-index: 10;
+  opacity: 1;
+}
+
+/* Фото праворуч (зсунуте і розгорнуте) */
+.slide.next {
+  transform: translate3d(120px, 0, -50px) rotateY(-25deg);
+  z-index: 5;
+  opacity: 0.6;
+}
+
+/* Фото ліворуч (зсунуте і розгорнуте) */
+.slide.prev {
+  transform: translate3d(-120px, 0, -50px) rotateY(25deg);
+  z-index: 5;
+  opacity: 0.6;
+}
+
+/* Всі інші фото (ховаємо за спину) */
+.slide.far {
+  transform: translate3d(0, 0, -150px);
+  opacity: 0;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  header,
+  .menu,
+  main {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+main {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 600px) {
+  /* 1. Глобальні налаштування */
+  body,
+  html {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  /* 2. Шапка та заголовок на головній (index.html) */
+  h1 {
+    font-size: 28px !important; /* Щоб текст не обрізався */
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .header-top img {
+    height: 45px !important; /* Маленьке лого для головної */
+    width: auto;
+  }
+
+  /* 3. Кнопка "Швидке замовлення" - ЗАВЖДИ В ОДИН РЯД */
+  .open-order-btn-header {
+    white-space: nowrap !important;
+    font-size: 10px !important;
+    padding: 0 10px !important;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-button {
+    width: 36px;
+    height: 36px;
+    background-size: 28px;
+    flex-shrink: 0;
+  }
+
+  /* 4. Сторінка послуги (laser.html) - Логотип та заголовок */
+  .laser-logo {
+    width: 70px !important;
+    top: 10px;
+    left: 10px;
+    position: fixed;
+  }
+
+  .menu-button-close {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    background-size: 20px;
+    position: fixed;
+  }
+
+  .container h1 {
+    font-size: 24px !important;
+    margin-top: 90px !important; /* Опускаємо текст нижче логотипа */
+    line-height: 1.2;
+  }
+
+  /* 5. Карусель (Прибираємо полоску збоку) */
+  .carousel-3d-container {
+    height: 280px;
+    perspective: 800px;
+    margin: 10px auto;
+    width: 100%;
+  }
+
+  .carousel-3d-track {
+    width: 180px; /* Ще трохи менше для гарантії */
+    height: 180px;
+  }
+
+  .slide.next {
+    transform: translate3d(50px, 0, -100px) rotateY(-25deg) !important;
+  }
+
+  .slide.prev {
+    transform: translate3d(-50px, 0, -100px) rotateY(25deg) !important;
+  }
+
+  /* 6. Картки товарів (index.html) */
+  .products {
+    grid-template-columns: 1fr !important;
+    gap: 30px;
+    padding: 0;
+  }
+
+  .product-photo {
+    max-width: 280px;
+    margin: 0 auto 15px auto;
+  }
+
+  .product-title,
+  .product-description,
+  .product-price {
+    text-align: center;
+  }
+
+  /* 7. Інші елементи */
+  main {
+    padding: 30px 15px;
+  }
+
+  footer {
+    height: 280px;
+  }
+
+  .service-description {
+    font-size: 14px;
+    padding: 0 10px;
+    text-align: center;
+  }
+}

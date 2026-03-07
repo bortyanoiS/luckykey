@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ua">
+  <head>
+    <title>Lucky Key</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="service-page">
+      <img src="images/logo.png" alt="Lucky Key " class="laser-logo" />
+      <a href="index.html" class="menu-button-close"></a>
+      <section class="container" style="margin-bottom: 0; padding-bottom: 0">
+        <h1>Лазерне гравіювання</h1>
+      </section>
+      <div class="carousel-3d-container">
+        <div class="carousel-3d-track">
+          <img src="images/grav1.jpg" class="slide active" alt="1" />
+          <img src="images/grav2.jpg" class="slide next" alt="2" />
+          <img src="images/grav3.jpg" class="slide far" alt="3" />
+          <img src="images/grav4.jpg" class="slide prev" alt="4" />
+          <img src="images/grav5.jpg" class="slide prev" alt="5" />
+          <img src="images/grav6.jpg" class="slide prev" alt="6" />
+        </div>
+      </div>
+
+      <section class="container">
+        <p class="service-description">
+          Ми виконуємо високоточне гравіювання на металі, шкірі, дереві та
+          пластику. Індивідуальні подарунки, маркування деталей або написи на
+          ключах.
+        </p>
+        <div style="text-align: center; margin-top: 30px">
+          <a
+            href="#order-popup"
+            class="open-order-btn-header"
+            style="text-decoration: none"
+          >
+            Швидке замовлення</a
+          >
+        </div>
+      </section>
+    </main>
+    <div id="order-popup" class="modal-overlay">
+      <div class="modal-content">
+        <a href="#" class="close-modal">&times;</a>
+
+        <h2 style="margin-top: 0; color: #fff">Замовити послугу</h2>
+        <p style="color: #ccc; font-size: 14px; margin-bottom: 20px">
+          Залиште контакти, і ми зв'яжемося з вами
+        </p>
+
+        <form
+          name="popup-order"
+          method="POST"
+          data-netlify="true"
+          class="order-form"
+        >
+          <div class="form-group">
+            <label for="name">Ваше ім'я</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Введіть ім'я"
+              required
+              style="
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                background: #121212;
+                border: 1px solid #444;
+                color: #fff;
+                border-radius: 5px;
+              "
+            />
+          </div>
+
+          <div class="form-group" style="margin-top: 15px">
+            <label for="phone">Номер телефону</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+380..."
+              required
+              style="
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                background: #121212;
+                border: 1px solid #444;
+                color: #fff;
+                border-radius: 5px;
+              "
+            />
+          </div>
+
+          <div class="form-group" style="margin-top: 15px">
+            <label for="service">Послуга</label>
+            <select
+              id="service"
+              name="service"
+              style="
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                background: #121212;
+                border: 1px solid #444;
+                color: #fff;
+                border-radius: 5px;
+              "
+            >
+              <option value="engraving" selected>Гравіювання</option>
+              <option value="keys">Виготовлення ключів</option>
+              <option value="auto-keys">Автомобільні ключі</option>
+              <option value="other">Інші послуги</option>
+            </select>
+          </div>
+
+          <button
+            type="submit"
+            class="submit-button"
+            style="
+              width: 100%;
+              padding: 15px;
+              background: #e8eff9;
+              color: #121212;
+              border: none;
+              border-radius: 8px;
+              font-weight: 800;
+              text-transform: uppercase;
+              cursor: pointer;
+              margin-top: 20px;
+            "
+          >
+            Надіслати
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <footer class="footer"></footer>
+  </body>
+</html>

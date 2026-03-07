@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ua">
+  <head>
+
+    <title>Lucky Key</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="menu" id="menu">
+        <div class="body-top">
+        <img src="images/logo.png" alt="Lucky Key ">
+        <a href="#" class="menu-button-close"></a>
+        </div>
+        <nav>
+            <a href="#header" class="nav-link">ГОЛОВНА</a>
+            <a href="#recomended" class="nav-link">НАШІ ПОСЛУГИ</a>
+            <a href="#categories" class="nav-link">ВІДГУКИ</a>
+            <a href="#benefits" class="nav-link">КОНТАКТИ</a>
+        </nav>
+    </div>   
+    <header id="header">
+        
+      <div class="header-top">
+    <img src="images/logo.png" alt="Lucky Key">
+    
+    <div class="header-actions">
+        <a href="#order-popup" class="open-order-btn-header">Швидке замовлення</a>
+        <a href="#menu" class="menu-button"></a>
+    </div>
+</div>
+
+        <div class="header-bottom">
+        <h1>Відчуйте безпеку <br> у кожному <br> оберті  ключа.</br></h1>
+        </div>
+        
+    </header>
+    <main>
+      <section id="recomended">
+        <h2 class="recomended-title">Наші послуги</h2>
+        <div class="products" >
+          <article class="product">
+            <img
+              class="product-photo"
+              src="images/recomended-1.png"
+              alt="Bose portable Smart speaker"
+            />
+            <h3 class="product-title">
+              <a href="laser.html" style="text-decoration: none; color: inherit"> Лазерне гравіювання</a></h3>
+            <!-- <p class="product-description">Smart home</p> -->
+            <!-- <p class="product-price">$ 399.00</p> -->
+          </article>
+          <article class="product">
+            <img
+              class="product-photo"
+              src="images/recomended-2.webp"
+              alt="SoundLink Flex Bluetooth speaker"
+            />
+            <h3 class="product-title">Автомобільні ключі</h3>
+            <!-- <p class="product-description">Portable bluetooth</p>
+            <p class="product-price">$ 149.00</p> -->
+          </article>
+          <article class="product">
+            <img
+              class="product-photo"
+              src="images/recomended-3.jpg"
+              alt="SoundLink Color Bluetooth speaker II"
+            />
+            <h3 class="product-title">Аксесуари</h3>
+            <!-- <p class="product-description">Portable bluetooth</p>
+            <p class="product-price">$ 129.00</p> -->
+          </article>
+        </div>
+      </section>
+   
+      <section class="benefits" id="benefits">
+        <h2 class="benefits-title">
+          КОНТАКТИ ТА <br />
+          АДРЕСА
+        </h2>
+        <div class="benefits-content">
+          <ul class="benefits-list">
+            <li>099 999 99 99</li>
+            <li>@instagram.com</li>
+            <li>viber number</li>
+            <li>Вул. Ярослава Мудрого, 44, м. Біла Церква</li>
+          </ul>
+
+          <p class="benefits-description">
+            
+          </p>
+        </div>
+      </section>
+    </main>
+     <div id="order-popup" class="modal-overlay">
+  <div class="modal-content">
+    <a href="#" class="close-modal">&times;</a>
+    
+    <h2 style="margin-top: 0; color: #fff;">Замовити послугу</h2>
+    <p style="color: #ccc; font-size: 14px; margin-bottom: 20px;">Залиште контакти, і ми зв'яжемося з вами</p>
+
+    <form name="popup-order" method="POST" data-netlify="true" class="order-form">
+      <input type="hidden" name="form-name" value="popup-order" />
+      <div class="form-group">
+        <label for="name">Ваше ім'я</label>
+        <input type="text" id="name" name="name" placeholder="Введіть ім'я" required style="width: 100%; padding: 10px; margin-top: 5px; background: #121212; border: 1px solid #444; color: #fff; border-radius: 5px;">
+      </div>
+
+      <div class="form-group" style="margin-top: 15px;">
+        <label for="phone">Номер телефону</label>
+        <input type="tel" id="phone" name="phone" placeholder="+380..." required style="width: 100%; padding: 10px; margin-top: 5px; background: #121212; border: 1px solid #444; color: #fff; border-radius: 5px;">
+      </div>
+
+      <div class="form-group" style="margin-top: 15px;">
+        <label for="service">Послуга</label>
+        <select id="service" name="service" style="width: 100%; padding: 10px; margin-top: 5px; background: #121212; border: 1px solid #444; color: #fff; border-radius: 5px;">
+          <option value="keys">Виготовлення ключів</option>
+          <option value="auto-keys">Автомобільні ключі</option>
+          <option value="engraving">Гравіювання</option>
+          <option value="engraving">Інші послуги</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-button" style="width: 100%; padding: 15px; background: #e8eff9; color: #121212; border: none; border-radius: 8px; font-weight: 800; text-transform: uppercase; cursor: pointer; margin-top: 20px;">Надіслати</button>
+    </form>
+  </div>
+</div>
+
+    <footer class="footer">
+    </footer>
+  </body>
+</html>
