@@ -887,15 +887,16 @@ main {
 
 
   .service-description {
-    font-size: 18px;
+    font-size: 15px;
     padding: 0 10px;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.2;
   }
    .logo {
     width: 10px; /* Тут можна поставити 70px або 80px, щоб він став компактнішим */
     top: 10px;   /* Можна трохи зменшити відступ від краю */
     left: 10px;
   }
+
 
 
