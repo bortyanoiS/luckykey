@@ -170,8 +170,8 @@ header {
 main {
   padding: 120px 80px;
   background-color: #121212;
-  -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
 }
 
 .recomended-title,
@@ -606,6 +606,116 @@ footer {
   background-color: #e8eff9; /* Колір активного кружечка (ваш світлий колір) */
   transform: scale(1.3);
   box-shadow: 0 0 10px rgba(232, 239, 249, 0.5);
+}
+
+/* Секція відгуків */
+.reviews-section {
+  padding: 60px 20px;;
+}
+
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+/* Картка відгуку */
+.review-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.review-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: #e8eff9;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Шапка картки */
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.user-avatar {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #e8eff9, #a3b8d7);
+  color: #121212;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  margin-right: 12px;
+}
+
+.user-meta {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.user-name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.review-date {
+  color: #888;
+  font-size: 12px;
+}
+
+.platform-icon {
+  font-weight: 900;
+  color: rgba(232, 239, 249, 0.3);
+}
+
+/* Текст та зірки */
+.review-text {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.stars {
+  color: #ffd700; /* Золотий колір зірок */
+  letter-spacing: 2px;
+}
+
+/* Кнопка "Залишити відгук" */
+.review-action {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.leave-review-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 1px solid #e8eff9;
+  color: #e8eff9;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.leave-review-btn:hover {
+  background: #e8eff9;
+  color: #121212;
 }
 
 @media (max-width: 1024px) {
