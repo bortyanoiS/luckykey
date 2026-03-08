@@ -560,7 +560,7 @@ main {
   h1 {
     font-size: 28px !important;
     margin-top: 20px;
-    text-align: center;
+    text-align: left;
   }
 
   .container h1 {
@@ -645,3 +645,4 @@ main {
     line-height: 1.5;
   }
 } /* КІНЕЦЬ МЕДІА-ЗАПИТУ */
+
