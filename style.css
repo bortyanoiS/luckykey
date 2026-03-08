@@ -324,6 +324,14 @@ main {
   line-height: 1;
 }
 
+.contact-link {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+  .contact-link:hover {
+    opacity: 0.7;
+  }
 /* Елементи форми всередині вікна */
 .form-group {
   margin-bottom: 15px;
