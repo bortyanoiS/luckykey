@@ -116,7 +116,6 @@ header {
   transform: scale(1.05);
 }
 
-/* На дуже маленьких екранах зменшуємо кнопку ще трохи */
 @media (max-width: 480px) {
   .open-order-btn-header {
     padding: 8px 15px;
@@ -167,7 +166,7 @@ header {
   margin-top: 15px;
 }
 
-/* 5. ОСНОВНИЙ КОНТЕНТ */
+
 main {
   padding: 120px 80px;
   background-color: #121212;
@@ -207,7 +206,6 @@ main {
   margin-top: 12px;
 }
 
-/* 6. КАТЕГОРІЇ ТА ПЕРЕВАГИ */
 .category {
   margin-top: 64px;
 }
@@ -255,7 +253,6 @@ main {
   font-weight: 400;
 }
 
-/* Стиль кнопки, яка відкриває форму */
 .open-order-btn {
   display: inline-block;
   padding: 18px 40px;
@@ -276,7 +273,6 @@ main {
   box-shadow: 0 6px 20px rgba(232, 239, 249, 0.4);
 }
 
-/* ФОН МОДАЛЬНОГО ВІКНА (затемнення) */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -289,19 +285,16 @@ main {
   align-items: center;
   z-index: 3000; /* Поверх усього */
 
-  /* Початковий стан (приховано) */
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s ease;
 }
 
-/* МАГІЯ ПОКАЗУ: коли в URL з'являється #order-popup */
 .modal-overlay:target {
   opacity: 1;
   visibility: visible;
 }
 
-/* КВАДРАТИК З ФОРМОЮ */
 .modal-content {
   background: #1e1e1e;
   padding: 40px;
@@ -313,7 +306,6 @@ main {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
 }
 
-/* Кнопка-хрестик */
 .close-modal {
   position: absolute;
   top: 15px;
@@ -332,7 +324,7 @@ main {
   .contact-link:hover {
     opacity: 0.7;
   }
-/* Елементи форми всередині вікна */
+
 .form-group {
   margin-bottom: 15px;
   text-align: left;
@@ -367,6 +359,72 @@ main {
   text-transform: uppercase;
   cursor: pointer;
   margin-top: 10px;
+}
+
+/* Оновлений контейнер каруселі */
+.carousel-3d-container {
+  perspective: 1200px; /* Трохи збільшив для кращого 3D */
+  width: 100%;
+  max-width: 600px;
+  height: 400px; /* Зменшив висоту, щоб не було великих дирок */
+  margin: 10px auto 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible; /* Щоб бокові фото не обрізалися */
+}
+
+.carousel-3d-track {
+  position: relative;
+  width: 300px; /* Оптимальна ширина для головного фото */
+  height: 300px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Більш плавна анімація */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  cursor: pointer; /* Робимо курсор-ручку */
+  backface-visibility: hidden;
+}
+
+/* Головне фото по центру */
+.slide.active {
+  transform: translate3d(0, 0, 150px); /* Виносимо вперед */
+  z-index: 10;
+  opacity: 1;
+  filter: blur(0);
+  cursor: default; /* На активному фото курсор звичайний */
+}
+
+/* Фото праворуч */
+.slide.next {
+  transform: translate3d(180px, 0, -100px) rotateY(-30deg) scale(0.8);
+  z-index: 5;
+  opacity: 0.6;
+  filter: blur(2px); /* Додаємо легке розмиття для глибини */
+}
+
+/* Фото ліворуч */
+.slide.prev {
+  transform: translate3d(-180px, 0, -100px) rotateY(30deg) scale(0.8);
+  z-index: 5;
+  opacity: 0.6;
+  filter: blur(2px);
+}
+
+/* Ховаємо далекі фото */
+.slide.far {
+  transform: translate3d(0, 0, -300px) scale(0.5);
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none; /* Щоб не можна було клікнути на невидиме */
 }
 
 /* 7. ФУТЕР */
@@ -528,6 +586,27 @@ footer {
   opacity: 0;
   z-index: 1;
 }
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #444; /* Колір неактивних кружечків */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: #e8eff9; /* Колір активного кружечка (ваш світлий колір) */
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(232, 239, 249, 0.5);
+}
 
 @media (max-width: 1024px) {
   header,
@@ -617,15 +696,21 @@ main {
   }
 
   /* 5. Карусель та Продукти */
+@media (max-width: 600px) {
   .carousel-3d-container {
-    height: 280px;
-    width: 100%;
+    height: 300px;
   }
-
   .carousel-3d-track {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
   }
+  .slide.next {
+    transform: translate3d(80px, 0, -80px) rotateY(-25deg) scale(0.75);
+  }
+  .slide.prev {
+    transform: translate3d(-80px, 0, -80px) rotateY(25deg) scale(0.75);
+  }
+}
 
   .products {
     grid-template-columns: 1fr !important;
@@ -644,5 +729,4 @@ main {
     text-align: center;
     line-height: 1.5;
   }
-} /* КІНЕЦЬ МЕДІА-ЗАПИТУ */
-
+}
