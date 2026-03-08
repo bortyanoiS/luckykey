@@ -840,6 +840,21 @@ main {
     grid-template-columns: 1fr !important;
     gap: 30px;
   }
+  .product-title{ 
+    display: inline-block; /* Щоб лінія не виходила за межі тексту */
+    
+    /* Налаштування товстої лінії */
+    border-bottom: 1.5px solid #e8eff9; /* 4px — це товщина, можна поставити 5px або 6px */
+    
+    /* Відступ лінії від тексту */
+    padding-bottom: 2.5px; 
+    
+    /* Робимо лінію трохи м'якшою на кутах (опціонально) */
+    border-radius: 2px;
+    
+    line-height: 1.1;
+  }
+}
 
   /* 6. Футер та Опис (Тепер вони працюватимуть) */
   footer {
@@ -869,7 +884,7 @@ main {
     margin-bottom: 15px;
     box-sizing: border-box; /* Важливо, щоб padding не розширював картку */
   }
-}
+
 
   .service-description {
     font-size: 18px;
