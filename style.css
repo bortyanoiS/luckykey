@@ -785,11 +785,7 @@ main {
     flex-shrink: 0;
   }
 
-  .body-top img, 
-  .header-top img {
-    height:70px !important; /* Робимо вдвічі меншим */
-  }
-  
+ 
   /* 4. Списки (Контакти/Переваги) - ВИПРАВЛЕННЯ ОБРІЗАННЯ */
   .benefits {
     display: block !important; /* Міняємо grid на block, щоб текст не стискався в колонки */
@@ -816,6 +812,11 @@ main {
   .benefits-content {
     padding: 0 5px; /* Мінімальний відступ */
     width: 100%;
+  }
+
+.body-top img, 
+  .header-top img {
+    height:70px !important; /* Робимо вдвічі меншим */
   }
 
   /* 5. Карусель та Продукти */
@@ -846,12 +847,40 @@ main {
     position: relative; /* Щоб не перекривав контент на мобілці */
   }
 
+  .reviews-section {
+    padding: 40px 15px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрує все всередині секції */
+    overflow: hidden; /* Обрізає все, що вилазить */
+  }
+.reviews-container {
+    /* Міняємо сітку на одну колонку */
+    grid-template-columns: 1fr !important; 
+    width: 100% !important;
+    margin: 20px 0 !important;
+    padding: 0 !important;
+  }
+
+  .review-card {
+    /* Гарантуємо, що картка не ширша за екран */
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 15px;
+    box-sizing: border-box; /* Важливо, щоб padding не розширював картку */
+  }
+}
+
   .service-description {
     font-size: 18px;
     padding: 0 10px;
     text-align: center;
     line-height: 1.5;
   }
-}
+   .logo {
+    width: 10px; /* Тут можна поставити 70px або 80px, щоб він став компактнішим */
+    top: 10px;   /* Можна трохи зменшити відступ від краю */
+    left: 10px;
+  }
 
 
