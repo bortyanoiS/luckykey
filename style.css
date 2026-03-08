@@ -746,15 +746,18 @@ main {
   }
 
   /* 2. Текст та заголовки */
+  
   h1 {
     font-size: 28px !important;
     margin-top: 20px;
     text-align: left;
   }
-  .title-1 {
+
+.text1 {
     font-size: 28px !important;
     margin-top: 20px;
     text-align: center;
+    display: block
   }
 
   .container h1 {
@@ -845,4 +848,3 @@ main {
     line-height: 1.5;
   }
 }
-
