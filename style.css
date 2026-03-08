@@ -1,6 +1,6 @@
-/* 1. БАЗОВІ НАЛАШТУВАННЯ ДЛЯ ВСІХ ПРИСТРОЇВ */
+
 * {
-  box-sizing: border-box; /* Щоб падінги не розтягували блоки */
+  box-sizing: border-box;
 }
 
 html {
@@ -461,6 +461,8 @@ footer {
   margin-left: auto; /* Авто-відступ зліва */
   margin-right: auto; /* Авто-відступ справа */
   margin-bottom: 30px; /* Відступ до кнопки */
+  font-size: 18px;
+  line-height: 25px;
 }
 .carousel-3d-container {
   perspective: 1000px; /* Створює глибину сцени */
@@ -539,7 +541,8 @@ main {
 
 @media (max-width: 600px) {
   /* 1. Глобальні налаштування */
-  body, html {
+  body,
+  html {
     overflow-x: hidden;
     position: relative;
     width: 100%;
@@ -584,7 +587,7 @@ main {
   }
 
   .benefits-list {
-    padding: 0 !important; 
+    padding: 0 !important;
     margin: 20px 0 !important;
     list-style: none;
     width: 100%;
@@ -628,12 +631,9 @@ main {
   }
 
   .service-description {
-    font-size: 14px;
+    font-size: 18px;
     padding: 0 10px;
     text-align: center;
     line-height: 1.5;
   }
 } /* КІНЕЦЬ МЕДІА-ЗАПИТУ */
-
-
-

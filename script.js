@@ -1,8 +1,9 @@
-let currentIndex = 0;
 const slides = document.querySelectorAll(".slide");
+let currentIndex = 0;
 
 function updateCarousel() {
   slides.forEach((slide, index) => {
+    // Очищуємо всі класи
     slide.classList.remove("active", "next", "prev", "far");
 
     if (index === currentIndex) {
@@ -12,11 +13,20 @@ function updateCarousel() {
     } else if (index === (currentIndex - 1 + slides.length) % slides.length) {
       slide.classList.add("prev");
     } else {
+      // Додаємо клас far для всіх інших, щоб вони ховалися плавно
       slide.classList.add("far");
     }
   });
-  currentIndex = (currentIndex + 1) % slides.length;
 }
 
-// Запуск автоматичного крутіння кожні 3 секунди
-setInterval(updateCarousel, 3000);
+// Функція саме для кроку вперед
+function showNextSlide() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateCarousel();
+}
+
+// Запуск автоматичного крутіння
+setInterval(showNextSlide, 3000);
+
+// Ініціалізація першого кадру при завантаженні
+updateCarousel();
