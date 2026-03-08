@@ -473,7 +473,7 @@ footer {
 }
 
 .laser-logo {
-  position: fixed;
+  position: absolute;
   top: 15px; /* Відступ від верху */
   left: 15px; /* Відступ від лівого краю */
   width: 120px; /* Тут регулюйте ширину логотипа (зробив меншим) */
@@ -848,3 +848,4 @@ main {
     line-height: 1.5;
   }
 }
+
