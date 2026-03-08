@@ -1,160 +1,152 @@
-/* Контейнер, де лежить логотип і кнопка в меню */
-.body-top {
-  display: flex;
-  justify-content: space-between; /* Розносить лого вліво, кнопку вправо */
-  align-items: center;
-  padding: 20px;
-  position: relative;
-}
+<!doctype html>
+<html lang="ua">
+  <head>
+    <title>Lucky Key</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="service-page">
+      <img src="images/logo.png" alt="Lucky Key " class="laser-logo" />
+      <a href="index.html" class="menu-button-close"></a>
+      <section class="container" style="margin-bottom: 0; padding-bottom: 0">
+        <h1>Лазерне гравіювання</h1>
+      </section>
+      <div class="carousel-3d-container">
+        <div class="carousel-3d-track">
+          <img src="images/grav1.jpg" class="slide" alt="1" />
+          <img src="images/grav2.jpg" class="slide" alt="2" />
+          <img src="images/grav3.jpg" class="slide" alt="3" />
+          <img src="images/grav4.jpg" class="slide" alt="4" />
+          <img src="images/grav5.jpg" class="slide" alt="5" />
+          <img src="images/grav6.jpg" class="slide" alt="6" />
+        </div>
+      </div>
+       <div class="carousel-dots"></div>
 
-.laser-logo {
-  position: absolute;
-  top: 15px; /* Відступ від верху */
-  left: 15px; /* Відступ від лівого краю */
-  width: 120px; /* Тут регулюйте ширину логотипа (зробив меншим) */
-  height: auto; /* Пропорції збережуться автоматично */
-  z-index: 1000;
-}
+      <section class="container">
+        <p class="service-description">
+          Ми виконуємо високоточне гравіювання на металі, шкірі, дереві та
+          пластику. Індивідуальні подарунки, маркування деталей або написи на
+          ключах.
+        </p>
+        <div style="text-align: center; margin-top: 30px">
+          <a
+            href="#order-popup"
+            class="open-order-btn-header"
+            style="text-decoration: none"
+          >
+            Швидке замовлення</a
+          >
+        </div>
+      </section>
+    </main>
+    <div id="order-popup" class="modal-overlay">
+      <div class="modal-content">
+        <a href="#" class="close-modal">&times;</a>
 
-.menu-button-close {
-  width: 40px;
-  height: 40px;
-  display: block;
-  position: absolute;
-  top: 15px; /* Той самий відступ, що й у логотипа для симетрії */
-  right: 15px; /* ПРИТИСКАЄМО ДО ПРАВОГО КРАЮ */
-  z-index: 1000;
+        <h2 style="margin-top: 0; color: #fff">Замовити послугу</h2>
+        <p style="color: #ccc; font-size: 14px; margin-bottom: 20px">
+          Залиште контакти, і ми зв'яжемося з вами
+        </p>
 
-  background-image: url(images/icon-close.png);
-  background-size: 24px;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-  border: none;
-}
+        <form
+          name="popup-order"
+          method="POST"
+          data-netlify="true"
+          class="order-form"
+        >
+          <div class="form-group">
+            <label for="name">Ваше ім'я</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Введіть ім'я"
+              required
+              style="
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                background: #121212;
+                border: 1px solid #444;
+                color: #fff;
+                border-radius: 5px;
+              "
+            />
+          </div>
 
-.menu-button-close:hover {
-  opacity: 0.7;
-}
+          <div class="form-group" style="margin-top: 15px">
+            <label for="phone">Номер телефону</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+380..."
+              required
+              style="
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                background: #121212;
+                border: 1px solid #444;
+                color: #fff;
+                border-radius: 5px;
+              "
+            />
+          </div>
 
-.header-bottom {
-  padding-bottom: 0px !important; /* Прибираємо відступ знизу у шапки */
-}
+          <div class="form-group" style="margin-top: 15px">
+            <label for="service">Послуга</label>
+            <select
+              id="service"
+              name="service"
+              style="
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                background: #121212;
+                border: 1px solid #444;
+                color: #fff;
+                border-radius: 5px;
+              "
+            >
+              <option value="engraving" selected>Гравіювання</option>
+              <option value="keys">Виготовлення ключів</option>
+              <option value="auto-keys">Автомобільні ключі</option>
+              <option value="other">Інші послуги</option>
+            </select>
+          </div>
 
-.service-page {
-  margin-top: -20px; /* Від'ємний відступ підніме всю основну частину вгору */
-}
-/* Центруємо вміст секції container */
-.container {
-  text-align: center; /* Центрує текст h1 та кнопку */
-  padding: 0 20px; /* Відступи, щоб текст не лип до країв на телефонах */
-}
-
-/* Налаштування для заголовка */
-.container h1 {
-  margin-top: 30px; /* Відступ від каруселі */
-  margin-bottom: 15px;
-  display: block; /* Гарантуємо, що це блочний елемент */
-}
-
-/* Налаштування для опису */
-.service-description {
-  max-width: 600px; /* Обмежуємо ширину, щоб текст було зручно читати */
-  margin-left: auto; /* Авто-відступ зліва */
-  margin-right: auto; /* Авто-відступ справа */
-  margin-bottom: 30px; /* Відступ до кнопки */
-}
-.carousel-3d-container {
-  perspective: 1000px; /* Створює глибину сцени */
-  width: 100%;
-  max-width: 600px;
-  height: 600px;
-  margin: 10px auto 30px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.carousel-3d-track {
-  position: relative;
-  width: 450px; /* Ширина головного фото */
-  height: 450px;
-  transform-style: preserve-3d;
-  transition: transform 0.8s ease-in-out;
-}
-
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  object-fit: cover;
-  transition: all 0.6s ease-in-out;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Головне фото по центру */
-.slide.active {
-  transform: translate3d(0, 0, 100px);
-  z-index: 10;
-  opacity: 1;
-}
-
-/* Фото праворуч (зсунуте і розгорнуте) */
-.slide.next {
-  transform: translate3d(120px, 0, -50px) rotateY(-25deg);
-  z-index: 5;
-  opacity: 0.6;
-}
-
-/* Фото ліворуч (зсунуте і розгорнуте) */
-.slide.prev {
-  transform: translate3d(-120px, 0, -50px) rotateY(25deg);
-  z-index: 5;
-  opacity: 0.6;
-}
-
-/* Всі інші фото (ховаємо за спину) */
-.slide.far {
-  transform: translate3d(0, 0, -150px);
-  opacity: 0;
-  z-index: 1;
-}
-
-@media (max-width: 1024px) {
-  header,
-  .menu,
-  main {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-  .products {
-    grid-template-columns: 1fr 1fr;
-  }
-  main {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-}
-
-/* ТЕЛЕФОНИ (до 768px) */
-@media (max-width: 768px) {
-  header,
-  .menu {
-    padding: 30px 20px;
-  }
-  main {
-    padding: 60px 20px;
-  }
-
-  h1 {
-    font-size: 34px;
-  }
-  .recomended-title,
-  .categories-title,
-  .benefits-title {
-    font-size: 32px;
-    line-height: 110%;
-    margin-bottom: 40px;
-  }
-}
+          <button
+            type="submit"
+            class="submit-button"
+            style="
+              width: 100%;
+              padding: 15px;
+              background: #e8eff9;
+              color: #121212;
+              border: none;
+              border-radius: 8px;
+              font-weight: 800;
+              text-transform: uppercase;
+              cursor: pointer;
+              margin-top: 20px;
+            "
+          >
+            Надіслати
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <footer class="footer"></footer>
+  </body>
+</html>
