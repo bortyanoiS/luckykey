@@ -785,6 +785,11 @@ main {
     flex-shrink: 0;
   }
 
+  .body-top img, 
+  .header-top img {
+    height:70px !important; /* Робимо вдвічі меншим */
+  }
+  
   /* 4. Списки (Контакти/Переваги) - ВИПРАВЛЕННЯ ОБРІЗАННЯ */
   .benefits {
     display: block !important; /* Міняємо grid на block, щоб текст не стискався в колонки */
@@ -848,4 +853,5 @@ main {
     line-height: 1.5;
   }
 }
+
 
