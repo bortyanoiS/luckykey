@@ -81,7 +81,7 @@ header {
   height: 100vh;
   background-image:
     linear-gradient(to bottom, rgba(18, 18, 18, 0) 70%, #121212 100%),
-    url(images/Header.png);
+    url(images/Header.webp);
   background-size: cover;
   background-position: top center;
 }
@@ -145,7 +145,7 @@ header {
   height: 40px; /* Така ж висота, як у кнопки */
   width: 40px; /* Робимо її квадратною */
   display: block;
-  background-image: url(images/icon-burger-menu.png);
+  background-image: url(images/icon-burger-menu.webp);
   background-size: 40px; /* Розмір самої іконки всередині квадрата */
   background-repeat: no-repeat;
   background-position: center;
@@ -155,13 +155,13 @@ header {
 }
 
 .menu-button {
-  background-image: url(images/icon-burger-menu.png);
+  background-image: url(images/icon-burger-menu.webp);
 }
 .menu-button:hover {
-  background-image: url(images/icon-burger-menu-hover.png);
+  background-image: url(images/icon-burger-menu-hover.webp);
 }
 .menu-button-close {
-  background-image: url(images/icon-close.png);
+  background-image: url(images/icon-close.webp);
   margin-top: 15px;
 }
 
@@ -445,7 +445,7 @@ footer {
   height: 460px;
   background-image:
     linear-gradient(to top, rgba(18, 18, 18, 0) 70%, #121212 100%),
-    url(images/Footer.png);
+    url(images/Footer.webp);
   background-size: cover;
   background-position: top center;
   color: #fff;
@@ -500,7 +500,7 @@ footer {
   right: 15px; /* ПРИТИСКАЄМО ДО ПРАВОГО КРАЮ */
   z-index: 1000;
 
-  background-image: url(images/icon-close.png);
+  background-image: url(images/icon-close.webp);
   background-size: 24px;
   background-repeat: no-repeat;
   background-position: center;
