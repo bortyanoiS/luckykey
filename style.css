@@ -27,11 +27,11 @@ h1 {
   margin: 0;
   margin-top: 40px;
   font-weight: 800;
-  font-style: italic;
+  font-style: Italic;
   font-size: 48px;
   line-height: 100%;
   letter-spacing: -1.5px;
-  color: #e8eff9;
+  vertical-align: middle;
 }
 
 /* 3. МЕНЮ (Мобільне на основі :target) */
@@ -774,17 +774,17 @@ main {
 
   /* 2. Текст та заголовки */
   h1 {
-    font-family: "Inter", sans-serif;
-    font-style: normal !important; /* Прибираємо курсив */
-    font-weight: 700;
-    font-size: 24px; /* Трохи менше, щоб виглядало акуратніше */
-    line-height: 1.1;
-    letter-spacing: 1px; /* Додаємо повітря між літерами */
-    color: #ffffff;
-    text-transform: uppercase;
     margin: 0;
-    text-align: left;
+    margin-top: 40px;
+    font-weight: 800;
+    font-style: Italic;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: -1.5px;
+    vertical-align: middle;
+    margin-bottom: 60px;
   }
+
   .text1 {
     font-family: "Inter", sans-serif;
     font-style: normal !important; /* Прибираємо курсив */
@@ -856,21 +856,18 @@ main {
     height: 70px !important; /* Робимо вдвічі меншим */
   }
 
-  /* 5. Карусель та Продукти */
-  @media (max-width: 600px) {
-    .carousel-3d-container {
-      height: 300px;
-    }
-    .carousel-3d-track {
-      width: 220px;
-      height: 220px;
-    }
-    .slide.next {
-      transform: translate3d(80px, 0, -80px) rotateY(-25deg) scale(0.75);
-    }
-    .slide.prev {
-      transform: translate3d(-80px, 0, -80px) rotateY(25deg) scale(0.75);
-    }
+  .carousel-3d-container {
+    height: 300px;
+  }
+  .carousel-3d-track {
+    width: 220px;
+    height: 220px;
+  }
+  .slide.next {
+    transform: translate3d(80px, 0, -80px) rotateY(-25deg) scale(0.75);
+  }
+  .slide.prev {
+    transform: translate3d(-80px, 0, -80px) rotateY(25deg) scale(0.75);
   }
 
   .products {
@@ -891,50 +888,50 @@ main {
 
     line-height: 1.1;
   }
-}
 
-/* 6. Футер та Опис (Тепер вони працюватимуть) */
-footer {
-  height: 280px !important;
-  position: relative; /* Щоб не перекривав контент на мобілці */
-}
+  /* 6. Футер та Опис (Тепер вони працюватимуть) */
+  footer {
+    height: 280px !important;
+    position: relative; /* Щоб не перекривав контент на мобілці */
+  }
 
-.reviews-section {
-  padding: 40px 15px !important;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Центрує все всередині секції */
-  overflow: hidden; /* Обрізає все, що вилазить */
-}
-.reviews-container {
-  /* Міняємо сітку на одну колонку */
-  grid-template-columns: 1fr !important;
-  width: 100% !important;
-  margin: 20px 0 !important;
-  padding: 0 !important;
-}
+  .reviews-section {
+    padding: 40px 15px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрує все всередині секції */
+    overflow: hidden; /* Обрізає все, що вилазить */
+  }
+  .reviews-container {
+    /* Міняємо сітку на одну колонку */
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    margin: 20px 0 !important;
+    padding: 0 !important;
+  }
 
-.review-card {
-  /* Гарантуємо, що картка не ширша за екран */
-  width: 100% !important;
-  max-width: 100% !important;
-  margin-bottom: 15px;
-  box-sizing: border-box; /* Важливо, щоб padding не розширював картку */
-}
+  .review-card {
+    /* Гарантуємо, що картка не ширша за екран */
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 15px;
+    box-sizing: border-box; /* Важливо, щоб padding не розширював картку */
+  }
 
-.service-description {
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  line-height: 1.3; /* Великий інтервал — ознака дорогого дизайну */
-  color: #a0a0a0; /* Спокійний сірий */
-  max-width: 650px;
-  margin: 30px auto;
-  text-align: center;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-}
-.logo {
-  width: 10px; /* Тут можна поставити 70px або 80px, щоб він став компактнішим */
-  top: 10px; /* Можна трохи зменшити відступ від краю */
-  left: 10px;
+  .service-description {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.3; /* Великий інтервал — ознака дорогого дизайну */
+    color: #a0a0a0; /* Спокійний сірий */
+    max-width: 650px;
+    margin: 30px auto;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+  .logo {
+    width: 10px; /* Тут можна поставити 70px або 80px, щоб він став компактнішим */
+    top: 10px; /* Можна трохи зменшити відступ від краю */
+    left: 10px;
+  }
 }
